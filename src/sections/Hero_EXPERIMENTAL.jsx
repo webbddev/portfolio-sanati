@@ -67,7 +67,7 @@ const Hero_EXPERIMENTAL = () => {
         <div className='relative px-10 text-black'>
           <div className='absolute inset-x-0 border-t-[6px] ' />
           <div className=' py-12 sm:py-16 ml-auto max-w-4xl'>
-            <AnimatedTextWords delay={3} className='font-light uppercase value-text-responsive text-end'>
+            <AnimatedTextWords delay={} className='font-light uppercase value-text-responsive text-end'>
               Helping Local Companies & Startups Establish a Unique Identity
               That Attracts Customers and Builds Lasting Community Presence.
             </AnimatedTextWords>
