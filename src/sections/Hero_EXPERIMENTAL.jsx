@@ -19,7 +19,6 @@ const Hero_EXPERIMENTAL = () => {
   const textRef = useRef(null);
   const isMobile = useMediaQuery({ maxWidth: 853 });
 
-
   useGSAP(() => {
     // if (textRef.current) {
     let split = SplitText.create(textRef.current, {
@@ -58,7 +57,9 @@ const Hero_EXPERIMENTAL = () => {
             </p>
             <div className='px-4 md:px-10'>
               <h1 className='flex flex-col flex-wrap gap-12 text-black uppercase banner-text-responsive sm:gap-16 md:block -translate-y-[4px] md:-translate-[10px]'>
-                <AnimatedTextWords className=''>Alevtina Gordienko</AnimatedTextWords>
+                <AnimatedTextWords className=''>
+                  Alevtina Gordienko
+                </AnimatedTextWords>
                 {/* Alevtina Gordienko */}
               </h1>
             </div>
@@ -67,7 +68,10 @@ const Hero_EXPERIMENTAL = () => {
         <div className='relative px-10 text-black'>
           <div className='absolute inset-x-0 border-t-[6px] ' />
           <div className=' py-12 sm:py-16 ml-auto max-w-4xl'>
-            <AnimatedTextWords delay={} className='font-light uppercase value-text-responsive text-end'>
+            <AnimatedTextWords
+              delay={3}
+              className='font-light uppercase value-text-responsive text-end'
+            >
               Helping Local Companies & Startups Establish a Unique Identity
               That Attracts Customers and Builds Lasting Community Presence.
             </AnimatedTextWords>
