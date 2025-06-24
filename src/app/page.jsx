@@ -3,7 +3,7 @@ import { Hero, Hero_EXPERIMENTAL, Navbar } from '@/sections';
 
 const App = () => {
   return (
-    <div className='relative w-screen mih-h-screen overflow-x-auto'>
+    <div className='relative w-screen mih-h-screen overflow-x-clip'>
       <Navbar />
       <Hero />
       <Hero_EXPERIMENTAL />
