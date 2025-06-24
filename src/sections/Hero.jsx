@@ -77,7 +77,7 @@ const Hero = () => {
           camera={{ position: [0, 0, -10], fov: 17.5, near: 1, far: 20 }}
         >
           <ambientLight intensity={0.5} />
-          <Float speed={2.5}>
+          <Float speed={1.5}>
             {/* <Diamond scale={isMobile ? 0.7 : 1} /> */}
             <Planet scale={isMobile ? 0.7 : 1} />
           </Float>
