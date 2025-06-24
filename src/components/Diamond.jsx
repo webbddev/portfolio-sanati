@@ -6,7 +6,7 @@ import React, { useRef } from 'react';
 import { useGLTF } from '@react-three/drei';
 
 export function Diamond(props) {
-  const { nodes, materials } = useGLTF('/models/diamond.glb');
+  const { nodes, materials } = useGLTF('/models/Diamond.glb');
   return (
     <group {...props} dispose={null}>
       <mesh
