@@ -35,7 +35,6 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 
 export function Diamond(props) {
-<<<<<<< HEAD
   const shapeContainer = useRef(null);
   const diamondContainer = useRef(null);
   const { nodes, materials } = useGLTF('/models/Diamond.glb');
@@ -64,9 +63,6 @@ export function Diamond(props) {
     );
   }, []);
 
-=======
-  const { nodes, materials } = useGLTF('/models/Diamond.glb');
->>>>>>> b5c96dd6456abddc54354235fc2c5047269e9474
   return (
     <group ref={shapeContainer} {...props} dispose={null}>
       <group ref={diamondContainer}>
