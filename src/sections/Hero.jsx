@@ -68,6 +68,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
+      {/* 3D background */}
       <figure
         className='absolute inset-x-0 -z-50'
         style={{ width: '100vw', height: '100vh' }}

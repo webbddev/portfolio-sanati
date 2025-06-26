@@ -1,3 +1,7 @@
 export { default as Navbar } from './Navbar';
 export { default as Hero_EXPERIMENTAL } from './Hero_EXPERIMENTAL';
+export { default as Hero_v3 } from './Hero_v3';
 export { default as Hero } from './Hero';
+export { default as ServiceSummary } from './ServiceSummary';
+export { default as Services } from './Services';
+export { default as Services_v3 } from './Services_v3';

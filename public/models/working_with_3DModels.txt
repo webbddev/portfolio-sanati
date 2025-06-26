@@ -1,0 +1,5 @@
+1. Install react-three-fiber package
+    npm install three @types/three @react-three/fiber @react-three/drei
+2. Find a 3D model you're interested in. E.g. see https://sketchfab.com/ or any other 3D model website
+3. Download the model and import it into your project in public/models folder
+4. Convert your <3d_model>.glb to jsx at https://gltf.pmnd.rs/

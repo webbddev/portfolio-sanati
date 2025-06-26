@@ -12,6 +12,7 @@ const AnimatedTextWords = ({
   children,
   className = '',
   delay = 0,
+  duration = 2.5,
   ...restProps
 }) => {
   const textRef = useRef(null);
@@ -28,7 +29,7 @@ const AnimatedTextWords = ({
         y: 100,
         autoAlpha: 0,
         scale: 2,
-        duration: 1.7,
+        duration: duration,
         delay: delay,
 
         ease: 'expo.out',
