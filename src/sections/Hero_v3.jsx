@@ -3,6 +3,7 @@
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { Suspense, useRef } from 'react';
+
 import { SplitText } from 'gsap/SplitText';
 import AnimatedTextWords from '@/components/AnimatedTextWords';
 import { Canvas } from '@react-three/fiber';

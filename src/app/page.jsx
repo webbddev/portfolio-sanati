@@ -1,5 +1,5 @@
-import Intro from '@/components/Intro';
 import {
+  About,
   Hero,
   Hero_EXPERIMENTAL,
   Hero_v3,
@@ -9,18 +9,16 @@ import {
   ServiceSummary,
 } from '@/sections';
 
-const App = () => {
+const Page = () => {
   return (
-    <div className='relative w-screen mih-h-screen overflow-x-clip'>
+    <div className='relative w-screen min-h-screen overflow-x-clip'>
       <Navbar />
       <Hero_v3 />
-      {/* <Hero /> */}
-      {/* <Hero_EXPERIMENTAL /> */}
       <ServiceSummary />
-      {/* <Services /> */}
       <Services_v3 />
+      <About />
     </div>
   );
 };
 
-export default App;
+export default Page;

@@ -12,9 +12,9 @@ import { AnimatedTextLines_v3 } from '../components/AnimatedTextLines_v3';
 gsap.registerPlugin(SplitText);
 
 const Services_v3 = () => {
-  const text = `I build secure, high-performance full-stack apps
-    with smooth UX to drive growth 
-    not headaches.`;
+  // const text = `I build secure, high-performance full-stack apps
+  //   with smooth UX to drive growth 
+  //   not headaches.`;
 
   const serviceRefs = useRef([]);
   const contextRef = useRef(null);
@@ -37,7 +37,7 @@ const Services_v3 = () => {
     });
 
     tl.from(
-      headerRef.current,
+      headerRef.current, 
       {
         opacity: 0,
         y: '200',
@@ -104,14 +104,14 @@ const Services_v3 = () => {
           ref={(el) => (serviceRefs.current[index] = el)}
           key={index}
           className='sticky px-10 pt-6 pb-12 text-white bg-black border-t-2 border-white/30'
-          style={
-            isDesktop
-              ? {
-                  top: `calc(10vh + ${index * 5}em)`,
-                  marginBottom: `${(servicesData.length - index - 1) * 5}rem`,
-                }
-              : { top: 0 }
-          }
+          // style={
+          //   isDesktop
+          //     ? {
+          //         top: `calc(10vh + ${index * 5}em)`,
+          //         marginBottom: `${(servicesData.length - index - 1) * 5}rem`,
+          //       }
+          //     : { top: 0 }
+          // }
         >
           <div className='flex items-center justify-between gap-4 font-light'>
             <div className='flex flex-col gap-6'>
