@@ -7,6 +7,7 @@ import {
   Services,
   Services_v3,
   ServiceSummary,
+  Works,
 } from '@/sections';
 
 const Page = () => {
@@ -17,6 +18,7 @@ const Page = () => {
       <ServiceSummary />
       <Services_v3 />
       <About />
+      <Works />
     </div>
   );
 };

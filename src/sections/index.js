@@ -7,3 +7,4 @@ export { default as Services } from './Services';
 export { default as Services_v3 } from './Services_v3';
 export { default as About } from './About';
 export { default as About_v3 } from './About_v3';
+export { default as Works } from './Works';

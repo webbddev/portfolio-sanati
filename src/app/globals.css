@@ -92,8 +92,8 @@
   --color-DarkLava: #393632;
   --color-SageGray: #8b8b73;
   --color-gold: #cfa355;
-  --font-amiamie: 'Amiamie', sans-serif;
-  --font-amiamie-round: 'Amiamie-Round', sans-serif;
+  --font-amiamie: 'Amiamie';
+  --font-amiamie-round: 'Amiamie-Round';
 
   --animate-marquee: marquee 40s infinite linear;
   @keyframes marquee {
@@ -111,7 +111,7 @@ body {
   color: black;
   scroll-behavior: smooth;
   overflow-x: hidden;
-  font-family: var(--font-amiamie);
+  font-family: var(--font-amiamie), sans-serif;
 }
 
 @utility clip-path {

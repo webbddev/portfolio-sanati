@@ -75,7 +75,7 @@ const Services_v3 = () => {
               Behind the scene, Beyond the screen
             </p>
             <div className='px-10'>
-              <h1 className='flex flex-col gap-12 text-white uppercase banner-text-responsive sm:gap-16 md:block  -translate-y-[4px] md:-translate-[10px]'>
+              <h1 className='flex flex-col gap-12 text-white uppercase banner-text-responsive sm:gap-16 md:block -translate-y-[4px] md:-translate-[10px]'>
                 <span>Service</span>
               </h1>
             </div>

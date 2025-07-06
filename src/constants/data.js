@@ -86,7 +86,7 @@ export const projects = [
     href: '',
     image: '/assets/projects/mobile-accessories-store.jpg',
     bgImage: '/assets/backgrounds/blanket.jpg',
-    frameworks: [
+    technologies: [
       { id: 1, name: 'React' },
       { id: 2, name: 'Next.js' },
       { id: 3, name: 'Node.js' },
@@ -102,7 +102,7 @@ export const projects = [
     href: '',
     image: '/assets/projects/plant-shop.jpg',
     bgImage: '/assets/backgrounds/curtains.jpg',
-    frameworks: [
+    technologies: [
       { id: 1, name: 'React' },
       { id: 2, name: 'Next.js' },
       { id: 3, name: 'Stripe API' },
@@ -117,7 +117,7 @@ export const projects = [
     href: '',
     image: '/assets/projects/apple-tech-store.jpg',
     bgImage: '/assets/backgrounds/map.jpg',
-    frameworks: [
+    technologies: [
       { id: 1, name: 'Blazor' },
       { id: 2, name: 'ASP.NET Core' },
       { id: 3, name: 'SQL Server' },
@@ -132,7 +132,7 @@ export const projects = [
     href: '',
     image: '/assets/projects/electronics-store.jpg',
     bgImage: '/assets/backgrounds/poster.jpg',
-    frameworks: [
+    technologies: [
       { id: 1, name: 'Vue.js' },
       { id: 2, name: 'Laravel' },
       { id: 3, name: 'MySQL' },
@@ -147,7 +147,7 @@ export const projects = [
     href: '',
     image: '/assets/projects/home-decor-store.jpg',
     bgImage: '/assets/backgrounds/table.jpg',
-    frameworks: [
+    technologies: [
       { id: 1, name: 'Angular' },
       { id: 2, name: 'Firebase' },
       { id: 3, name: 'GraphQL' },
@@ -162,7 +162,7 @@ export const projects = [
     href: '',
     image: '/assets/projects/game-store.jpg',
     bgImage: '/assets/backgrounds/curtains.jpg',
-    frameworks: [
+    technologies: [
       { id: 1, name: 'Svelte' },
       { id: 2, name: 'Node.js' },
       { id: 3, name: 'MongoDB' },
@@ -170,6 +170,7 @@ export const projects = [
     ],
   },
 ];
+
 export const socials = [
   { name: 'Instagram', href: 'https://www.instagram.com/ali.sanatidev/reels/' },
   {
