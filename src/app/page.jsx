@@ -15,8 +15,8 @@ const Page = () => {
     <div className='relative w-screen min-h-screen overflow-x-clip'>
       <Navbar />
       {/* <Hero_v3 /> */}
-      {/* <ServiceSummary /> */}
-      {/* <Services_v3 /> */}
+      <ServiceSummary />
+      <Services_v3 />
       <About />
       <Works />
     </div>

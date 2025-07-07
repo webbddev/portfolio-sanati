@@ -5,7 +5,7 @@ import LineSeparator from '@/components/LineSeparator';
 import { projects } from '../constants/data';
 import { Icon } from '@iconify/react';
 import Image from 'next/image';
-import { use, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 
@@ -33,12 +33,12 @@ const Works = () => {
     });
 
     gsap.from('#project', {
-      y: 100,
-      opacity: 0,
-      delay: 0.5,
-      duration: 1,
-      stagger: 0.3,
-      ease: 'back.out',
+      y: 200, // Start 200px lower
+      opacity: 0, // Start completely transparent
+      delay: 0.5, // Wait 0.5s before starting
+      duration: 1, // Animation duration — 1s
+      stagger: 0.3, // Delay between the animation of each element with id='project'
+      ease: 'back.out', // Animation style (with a slight "bounce" at the end)
       scrollTrigger: {
         trigger: '#project',
       },
@@ -148,10 +148,10 @@ const Works = () => {
             {/* overlay */}
             <div
               ref={(el) => (overlayRefs.current[index] = el)}
-              className='absolute inset-0 hidden md:block duration-200 bg-black -z-10 clip-path'
+              className='absolute inset-0 hidden md:block duration-200 bg-black/90 -z-10 clip-path'
             />
             {/* Project title */}
-            <div className='flex items-center justify-between px-10 text-black transition-all duration-500 md:group-hover:px-12 md:group-hover:text-white'>
+            <div className='flex items-center justify-between px-10 text-black transition-all duration-500 md:group-hover:px-16 md:group-hover:text-white'>
               <h2 className='lg:text-[32px] text-[26px] leading-none'>
                 {project.name}
               </h2>
@@ -161,7 +161,7 @@ const Works = () => {
             <div className='w-full h-0.5 bg-black/80' />
 
             {/* framework */}
-            <div className='flex px-10 text-xs leading-loose uppercase transition-all duration-500 md:text-sm gap-x-5 md:group-hover:px-12'>
+            <div className='flex px-10 text-xs leading-loose uppercase transition-all duration-500 md:text-sm gap-x-5 md:group-hover:px-20'>
               {project.technologies.map((technology) => (
                 <p
                   key={technology.id}
@@ -200,7 +200,7 @@ const Works = () => {
         {/* Desktop floating preview images */}
         <div
           ref={previewRef}
-          className='fixed -top-2/6 left-0 z-50 overflow-hidden border-8 border-black pointer-events-none w-[960px] md:block hidden opacity-0'
+          className='fixed -top-2/6 left-0 z-50 overflow-hidden border-8 border-black/90 rounded-xl pointer-events-none w-[960px] md:block hidden opacity-0'
         >
           {currentIndex !== null && (
             <Image
