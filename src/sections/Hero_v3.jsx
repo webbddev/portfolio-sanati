@@ -61,7 +61,7 @@ const Hero_v3 = () => {
             <div className='px-4 md:px-10'>
               <h1 className='flex flex-col flex-wrap gap-12 text-black uppercase banner-text-responsive sm:gap-16 md:block -translate-y-[4px] md:-translate-[10px]'>
                 <AnimatedTextWords duration={2} className=''>
-                  Alevtina Gordienko
+                  Md Golam Nijam 
                 </AnimatedTextWords>
               </h1>
             </div>
