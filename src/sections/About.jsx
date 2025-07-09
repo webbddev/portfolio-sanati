@@ -12,6 +12,7 @@ const About = () => {
   useGSAP(() => {
     gsap.to('#about', {
       scale: 0.95,
+      opacity:  0,
       scrollTrigger: {
         trigger: '#about',
         start: 'bottom 80%',
@@ -56,8 +57,7 @@ const About = () => {
           </div>
         </div>
 
-        {/* Full width horizontal line placed under the title */}
-        <LineSeparator className={'border-white'} />
+        <LineSeparator className={'border-white max-w-none'} thickness='border-t-[5px]'/>
         {/* <div className='border-2 border-white w-full absolute left-0 top-[163px] sm:top-[209px] lg:top-[227px]' /> */}
 
         <div className='relative px-10 text-white max-w-[1870px] mx-auto'>

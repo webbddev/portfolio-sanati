@@ -1,9 +1,10 @@
-const LineSeparator = ({ className = 'border-black' }) => {
-  return (
-    <div
-      className={`absolute border-[3px] md:border-[3px] w-full left-0 top-[163px] sm:top-[209px] lg:top-[227px] ${className}`}
-    />
-  );
+const LineSeparator = ({
+  className = 'border-black',
+  thickness = 'border-t-2',
+  positioning = 'absolute inset-x-0',
+}) => {
+  return <div className={`${positioning} ${thickness} ${className} w-full`} />;
 };
 
 export default LineSeparator;
+

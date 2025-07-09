@@ -7,10 +7,11 @@ import { Suspense, useRef } from 'react';
 import { SplitText } from 'gsap/SplitText';
 import AnimatedTextWords from '@/components/AnimatedTextWords';
 import { Canvas } from '@react-three/fiber';
-import { Environment, Float } from '@react-three/drei';
+import { Environment, Float, Line } from '@react-three/drei';
 import { useMediaQuery } from 'react-responsive';
 import { Diamond } from '@/components/Diamond';
 import { Planet } from '@/components/Planet';
+import LineSeparator from '@/components/LineSeparator';
 
 // Register GSAP plugins
 gsap.registerPlugin(SplitText);
@@ -62,14 +63,13 @@ const Hero_v3 = () => {
                 <AnimatedTextWords duration={2} className=''>
                   Alevtina Gordienko
                 </AnimatedTextWords>
-                {/* Alevtina Gordienko */}
               </h1>
             </div>
           </div>
         </div>
         <div className='relative px-10 text-black'>
-          <div className='absolute inset-x-0 border-t-[6px] ' />
-          <div className=' py-12 sm:py-16 ml-auto max-w-4xl'>
+          <LineSeparator className='border-black' thickness='border-t-[5px]'/>
+          <div className='py-12 sm:py-16 ml-auto max-w-4xl'>
             <AnimatedTextWords
               delay={5}
               className='font-light uppercase value-text-responsive text-end'
@@ -80,6 +80,7 @@ const Hero_v3 = () => {
           </div>
         </div>
       </div>
+      {/* 3D Scene */}
       <figure
         className='absolute inset-x-0 -z-50' // -z-50 sets low z-index, so the canvas is behind the UI
         style={{ width: '100vw', height: '100vh' }} // Stretches the canvas to the viewport

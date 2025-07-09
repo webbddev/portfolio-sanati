@@ -119,7 +119,7 @@ const Works = () => {
       </div>
 
       {/* Full width horizontal line placed under the title */}
-      <LineSeparator className={'border-black'} />
+      <LineSeparator className={'border-black'} thickness={'border-t-[5px]'} />
 
       <div className='relative px-10 text-black max-w-[1870px] mx-auto'>
         <div className='py-12 sm:py-16 text-end'>
@@ -134,7 +134,7 @@ const Works = () => {
       </div>
 
       <div
-        className='relative flex flex-col font-light'
+        className='relative flex flex-col font-light max-w-[1870px] mx-auto'
         onMouseMove={handleMouseMove}
       >
         {projects.map((project, index) => (
