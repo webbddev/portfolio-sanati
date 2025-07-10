@@ -1,7 +1,7 @@
 'use client';
 
-import { AnimatedTextLines_v3 } from '@/components/AnimatedTextLines_v3';
-import LineSeparator from '@/components/LineSeparator';
+import { AnimatedTextLines_v3 } from '../components/AnimatedTextLines_v3';
+import LineSeparator from '../components/LineSeparator';
 import { projects } from '../constants/data';
 import { Icon } from '@iconify/react';
 import Image from 'next/image';
@@ -200,7 +200,7 @@ const Works = () => {
         {/* Desktop floating preview images */}
         <div
           ref={previewRef}
-          className='fixed -top-2/6 left-0 z-50 overflow-hidden border-8 border-black/90 rounded-xl pointer-events-none w-[960px] md:block hidden opacity-0'
+          className='fixed -top-2/6 left-0 z-50 overflow-hidden border-8 border-black/90 rounded-xl pointer-events-none w-[760px] md:block hidden opacity-0'
         >
           {currentIndex !== null && (
             <Image

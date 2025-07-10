@@ -11,8 +11,8 @@ const About = () => {
 
   useGSAP(() => {
     gsap.to('#about', {
-      scale: 0.95,
-      opacity:  0,
+      scale: 0.9,
+      opacity: 0,
       scrollTrigger: {
         trigger: '#about',
         start: 'bottom 80%',
@@ -39,7 +39,7 @@ const About = () => {
   return (
     <section
       id='about'
-      className='min-h-screen bg-black rounded-b-4xl relative'
+      className='py-16 md:py-32 bg-black rounded-b-4xl relative'
     >
       {/* Container with max width */}
       <div className='max-w-[2400px] mx-auto'>
@@ -57,7 +57,10 @@ const About = () => {
           </div>
         </div>
 
-        <LineSeparator className={'border-white max-w-none'} thickness='border-t-[5px]'/>
+        <LineSeparator
+          className={'border-white max-w-none'}
+          thickness='border-t-[5px]'
+        />
         {/* <div className='border-2 border-white w-full absolute left-0 top-[163px] sm:top-[209px] lg:top-[227px]' /> */}
 
         <div className='relative px-10 text-white max-w-[1870px] mx-auto'>
@@ -74,7 +77,7 @@ const About = () => {
           <div className='flex flex-col items-center justify-between gap-16 px-10 pb-16 text-xl font-light tracking-wide lg:flex-row md:text-2xl lg:text-3xl text-white/60'>
             <Image
               ref={imgRef}
-              src='/images/f1.jpg'
+              src='/images/man.jpg'
               alt='man'
               width={500}
               height={600}

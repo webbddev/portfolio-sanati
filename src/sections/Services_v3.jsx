@@ -26,7 +26,7 @@ const Services_v3 = () => {
       sectionRef.current,
       {
         y: 100,
-        scale: 0.95,
+        scale: 0.90,
         opacity: 0,
       },
       {
@@ -50,11 +50,11 @@ const Services_v3 = () => {
       },
     });
 
-    tl.from(contextRef.current, {
-      y: '50vh',
-      duration: 1,
-      ease: 'circ.out',
-    });
+    // tl.from(contextRef.current, {
+    //   y: '50vh',
+    //   duration: 1,
+    //   ease: 'circ.out',
+    // });
 
     tl.from(
       headerRef.current,
@@ -129,7 +129,16 @@ const Services_v3 = () => {
               ref={(el) => (serviceRefs.current[index] = el)}
               key={index}
               className='sticky px-10 pt-6 pb-12 text-white bg-black border-t-2 border-white/30'
-
+              style={
+                isDesktop
+                  ? {
+                      top: `calc(10vh + ${index * 5}em)`,
+                      marginBottom: `${
+                        (servicesData.length - index - 1) * 5
+                      }rem`,
+                    }
+                  : { top: 0 }
+              }
             >
               <div className='flex items-center justify-between gap-4 font-light'>
                 <div className='flex flex-col gap-6'>
