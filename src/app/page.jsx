@@ -5,9 +5,9 @@ import {
   About,
   Contact,
   ContactSummary,
-  Hero_v3,
+  Hero,
   Navbar,
-  Services_v3,
+  Services,
   ServiceSummary,
   Works,
 } from '@/sections';
@@ -16,13 +16,13 @@ import { useProgress } from '@react-three/drei';
 const LoadingScreen = () => {
   const { progress } = useProgress();
   return (
-    <div className="fixed inset-0 z-[999] flex flex-col items-center justify-center bg-black text-white font-light">
-      <p className="mb-4 text-xl tracking-widest animate-pulse">
+    <div className='fixed inset-0 z-[999] flex flex-col items-center justify-center bg-black text-white font-light'>
+      <p className='mb-4 text-xl tracking-widest animate-pulse'>
         Loading {Math.floor(progress)}%
       </p>
-      <div className="relative h-1 w-60 overflow-hidden rounded bg-white/20">
+      <div className='relative h-1 w-60 overflow-hidden rounded bg-white/20'>
         <div
-          className="absolute top-0 left-0 h-full bg-white transition-all duration-300"
+          className='absolute top-0 left-0 h-full bg-white transition-all duration-300'
           style={{ width: `${progress}%` }}
         />
       </div>
@@ -50,9 +50,9 @@ const Page = () => {
         }`}
       >
         <Navbar />
-        <Hero_v3 />
+        <Hero />
         <ServiceSummary />
-        <Services_v3 />
+        <Services/>
         <About />
         <Works />
         <ContactSummary />

@@ -1,48 +1,56 @@
 'use client';
 
-import { AnimatedTextLines } from '@/components/AnimatedTextLines';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
-import { useRef } from 'react';
+import { Suspense, useRef } from 'react';
+
+import { SplitText } from 'gsap/SplitText';
+import AnimatedTextWords from '@/components/AnimatedTextWords';
 import { Canvas } from '@react-three/fiber';
-import { Environment, Float, Lightformer } from '@react-three/drei';
+import { Environment, Float, Line } from '@react-three/drei';
 import { useMediaQuery } from 'react-responsive';
-import { Planet } from '../components/Planet';
-import { Diamond } from '../components/Diamond';
+import { Diamond } from '@/components/Diamond';
+import { Planet } from '@/components/Planet';
+import LineSeparator from '@/components/LineSeparator';
+
+// Register GSAP plugins
+gsap.registerPlugin(SplitText);
 
 const Hero = () => {
   const contextRef = useRef(null);
   const headerRef = useRef(null);
+  const textRef = useRef(null);
   const isMobile = useMediaQuery({ maxWidth: 853 });
 
-  const aboutText = `Helping Local Companies & Startups 
-  Establish a Unique Identity That Attracts Customers 
-  and Builds Lasting Community Presence.`;
-
   useGSAP(() => {
-    const tl = gsap.timeline();
-
-    tl.from(contextRef.current, {
-      y: '50vh',
-      duration: 1,
-      ease: 'circ.out',
+    // if (textRef.current) {
+    let split = SplitText.create(textRef.current, {
+      type: 'words',
+      wordsClass: '',
     });
-    tl.from(
-      headerRef.current,
-      {
-        opacity: 0,
-        y: '200',
-        duration: 1,
-        ease: 'circ.out',
+
+    gsap.from(split.words, {
+      y: 100,
+      autoAlpha: 0,
+      scale: 2,
+      duration: 1.5,
+      // yoyo: true,
+      // repeat: -1,
+      // repeatDelay: 0.5,
+      // stagger: 0.1,
+      stagger: {
+        amount: 0.5,
+        from: 'start',
       },
-      '<+0.2'
-    );
-  }, []);
+      ease: 'expo.out',
+    });
+    // }
+  });
 
   return (
     <section id='home' className='flex flex-col justify-end min-h-screen'>
       <div ref={contextRef}>
-        <div style={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)' }}>
+        <div>
           <div
             ref={headerRef}
             className='flex flex-col justify-center gap-12 pt-16 sm:gap-16'
@@ -52,64 +60,51 @@ const Hero = () => {
             </p>
             <div className='px-4 md:px-10'>
               <h1 className='flex flex-col flex-wrap gap-12 text-black uppercase banner-text-responsive sm:gap-16 md:block -translate-y-[4px] md:-translate-[10px]'>
-                Alevtina Gordienko
+                <AnimatedTextWords duration={2} className=''>
+                  Alevtina Gordienko
+                </AnimatedTextWords>
               </h1>
             </div>
           </div>
         </div>
         <div className='relative px-10 text-black'>
-          <div className='absolute inset-x-0 border-t-2' />
-          <div className='py-12 sm:py-16 text-end'>
-            <AnimatedTextLines
-              delay={1.4}
-              text={aboutText}
-              className='font-light uppercase value-text-responsive'
-            />
+          <LineSeparator className='border-black' thickness='border-t-[5px]' />
+          <div className='py-12 sm:py-16 ml-auto max-w-4xl'>
+            <AnimatedTextWords
+              delay={5}
+              className='font-light uppercase value-text-responsive text-end'
+            >
+              Helping Local Companies & Startups Establish a Unique Identity
+              That Attracts Customers and Builds Lasting Community Presence.
+            </AnimatedTextWords>
           </div>
         </div>
       </div>
-      {/* 3D background */}
+      {/* 3D Scene */}
       <figure
-        className='absolute inset-x-0 -z-50'
-        style={{ width: '100vw', height: '100vh' }}
+        className='absolute inset-x-0 -z-50' // -z-50 sets low z-index, so the canvas is behind the UI
+        style={{ width: '100vw', height: '100vh' }} // Stretches the canvas to the viewport
       >
         <Canvas
           shadows
           camera={{ position: [0, 0, -10], fov: 17.5, near: 1, far: 20 }}
         >
-          <ambientLight intensity={0.5} />
-          <Float speed={1.5}>
-            {/* <Diamond scale={isMobile ? 0.7 : 1} /> */}
-            <Planet scale={isMobile ? 0.7 : 1} />
-          </Float>
-          <Environment resolution={256}>
-            <group rotation={[-Math.PI / 3, 4, 1]}>
-              <Lightformer
-                form={'circle'}
-                intensity={2}
-                position={[0, 5, -9]}
-                scale={10}
-              />
-              <Lightformer
-                form={'circle'}
-                intensity={2}
-                position={[0, 3, 1]}
-                scale={10}
-              />
-              <Lightformer
-                form={'circle'}
-                intensity={2}
-                position={[-5, -1, -1]}
-                scale={10}
-              />
-              <Lightformer
-                form={'circle'}
-                intensity={2}
-                position={[10, 1, 0]}
-                scale={16}
-              />
-            </group>
-          </Environment>
+          {/* Simplified lighting - much lighter on performance */}
+          <ambientLight intensity={0.8} />
+          <directionalLight position={[10, 10, 5]} intensity={1} castShadow />
+          <pointLight position={[-10, -10, -5]} intensity={0.5} />
+          <Suspense fallback={null}>
+            <Float speed={1.5} rotationIntensity={0.5} floatIntensity={0.5}>
+              {/* <Diamond scale={isMobile ? 0.7 : 1} /> */}
+              <Planet scale={isMobile ? 0.7 : 1} />
+            </Float>
+          </Suspense>
+          {/* Simple environment for basic reflections */}
+          <Environment preset='dawn' background={false} />
+          {/* <Environment
+            background={true}
+            files={'/hdr/belfast_sunset_puresky_4k.hdr'}
+          /> */}
         </Canvas>
       </figure>
     </section>

@@ -1,6 +1,6 @@
 'use client';
 import LineSeparator from '@/components/LineSeparator';
-import { AnimatedTextLines_v3 } from '../components/AnimatedTextLines_v3';
+import { AnimatedTextLines } from '../components/AnimatedTextLines';
 import { socials } from '@/constants/data';
 import Link from 'next/link';
 import Marquee from '@/components/Marquee';
@@ -10,7 +10,7 @@ import { useRef } from 'react';
 
 const Contact = () => {
   const sectionRef = useRef(null);
-  
+
   const items = [
     'just imagin, I code',
     'just imagin, I code',
@@ -78,13 +78,13 @@ const Contact = () => {
       <LineSeparator className={'border-white'} thickness={'border-t-[5px]'} />
       <div className='relative px-10 text-white max-w-[1870px] mx-auto'>
         <div className='py-12 sm:py-16 text-end'>
-          <AnimatedTextLines_v3
+          <AnimatedTextLines
             delay={0.2}
             className='font-light uppercase value-text-responsive text-white max-w-4xl ml-auto'
           >
             Let's collaborate and bring your vision to life through innovative
             web solutions.
-          </AnimatedTextLines_v3>
+          </AnimatedTextLines>
         </div>
       </div>
       <div className='max-w-[1870px] mx-auto flex px-10 font-light text-white uppercase text-[26px] lg:text-[32px] leading-none mb-10'>

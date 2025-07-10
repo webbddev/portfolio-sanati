@@ -1,6 +1,6 @@
 'use client';
 import { useRef } from 'react';
-import { AnimatedTextLines_v3 } from '../components/AnimatedTextLines_v3';
+import { AnimatedTextLines } from '../components/AnimatedTextLines';
 import Image from 'next/image';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
@@ -65,13 +65,13 @@ const About = () => {
 
         <div className='relative px-10 text-white max-w-[1870px] mx-auto'>
           <div className='py-12 sm:py-16 lg:py-0 lg:mt-34 text-end '>
-            <AnimatedTextLines_v3
+            <AnimatedTextLines
               delay={0.2}
               className='font-light uppercase value-text-responsive text-white max-w-4xl ml-auto'
             >
               I build secure, high-performance full-stack apps with smooth UX to
               drive growth not headaches.
-            </AnimatedTextLines_v3>
+            </AnimatedTextLines>
           </div>
 
           <div className='flex flex-col items-center justify-between gap-16 px-10 pb-16 text-xl font-light tracking-wide lg:flex-row md:text-2xl lg:text-3xl text-white/60'>
@@ -84,7 +84,7 @@ const About = () => {
               className='w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl mx-auto lg:mx-0 rounded-lg object-cover aspect-[4/5]'
             />
 
-            <AnimatedTextLines_v3
+            <AnimatedTextLines
               delay={0.5}
               className='font-light value-text-responsive text-white max-w-none lg:max-w-2xl xl:max-w-3xl 2xl:max-w-4xl'
             >
@@ -93,7 +93,7 @@ const About = () => {
 🎥 Teaching devs on Twitch/YouTube—because rising tides lift all ships
 🧗 Rock climbing (problem-solving with real stakes)
 🎸 Strumming chords while CI pipelines pass (multitasking at its finest)`}
-            </AnimatedTextLines_v3>
+            </AnimatedTextLines>
           </div>
         </div>
       </div>

@@ -1,6 +1,6 @@
 'use client';
 
-import { AnimatedTextLines_v3 } from '../components/AnimatedTextLines_v3';
+import { AnimatedTextLines } from '../components/AnimatedTextLines';
 import LineSeparator from '../components/LineSeparator';
 import { projects } from '../constants/data';
 import { Icon } from '@iconify/react';
@@ -123,13 +123,13 @@ const Works = () => {
 
       <div className='relative px-10 text-black max-w-[1870px] mx-auto'>
         <div className='py-12 sm:py-16 text-end'>
-          <AnimatedTextLines_v3
+          <AnimatedTextLines
             delay={0.2}
             className='font-light uppercase value-text-responsive text-black max-w-4xl ml-auto'
           >
             Featured projects that have been meticulously crafted with passion
             to drive results and impact.
-          </AnimatedTextLines_v3>
+          </AnimatedTextLines>
         </div>
       </div>
 
