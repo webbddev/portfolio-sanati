@@ -81,32 +81,7 @@ const Hero_v3 = () => {
         </div>
       </div>
       {/* 3D Scene */}
-      <figure
-        className='absolute inset-x-0 -z-50' // -z-50 sets low z-index, so the canvas is behind the UI
-        style={{ width: '100vw', height: '100vh' }} // Stretches the canvas to the viewport
-      >
-        <Canvas
-          shadows
-          camera={{ position: [0, 0, -10], fov: 17.5, near: 1, far: 20 }}
-        >
-          {/* Simplified lighting - much lighter on performance */}
-          <ambientLight intensity={0.8} />
-          <directionalLight position={[10, 10, 5]} intensity={1} castShadow />
-          <pointLight position={[-10, -10, -5]} intensity={0.5} />
-          <Suspense fallback={null}>
-            <Float speed={1.5} rotationIntensity={0.5} floatIntensity={0.5}>
-              {/* <Diamond scale={isMobile ? 0.7 : 1} /> */}
-              <Planet scale={isMobile ? 0.7 : 1} />
-            </Float>
-          </Suspense>
-          {/* Simple environment for basic reflections */}
-          <Environment preset='dawn' background={false} />
-          {/* <Environment
-            background={true}
-            files={'/hdr/belfast_sunset_puresky_4k.hdr'}
-          /> */}
-        </Canvas>
-      </figure>
+      
     </section>
   );
 };
