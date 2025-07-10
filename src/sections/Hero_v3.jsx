@@ -1,51 +1,18 @@
 'use client';
 
-import gsap from 'gsap';
-import { useGSAP } from '@gsap/react';
 import { Suspense, useRef } from 'react';
 
-import { SplitText } from 'gsap/SplitText';
 import AnimatedTextWords from '@/components/AnimatedTextWords';
 import { Canvas } from '@react-three/fiber';
-import { Environment, Float, Line } from '@react-three/drei';
+import { Environment, Float } from '@react-three/drei';
 import { useMediaQuery } from 'react-responsive';
-import { Diamond } from '@/components/Diamond';
 import { Planet } from '@/components/Planet';
 import LineSeparator from '@/components/LineSeparator';
-
-// Register GSAP plugins
-gsap.registerPlugin(SplitText);
 
 const Hero_v3 = () => {
   const contextRef = useRef(null);
   const headerRef = useRef(null);
-  const textRef = useRef(null);
   const isMobile = useMediaQuery({ maxWidth: 853 });
-
-  useGSAP(() => {
-    // if (textRef.current) {
-    let split = SplitText.create(textRef.current, {
-      type: 'words',
-      wordsClass: '',
-    });
-
-    gsap.from(split.words, {
-      y: 100,
-      autoAlpha: 0,
-      scale: 2,
-      duration: 1.5,
-      // yoyo: true,
-      // repeat: -1,
-      // repeatDelay: 0.5,
-      // stagger: 0.1,
-      stagger: {
-        amount: 0.5,
-        from: 'start',
-      },
-      ease: 'expo.out',
-    });
-    // }
-  });
 
   return (
     <section id='home' className='flex flex-col justify-end min-h-screen'>
@@ -81,7 +48,28 @@ const Hero_v3 = () => {
         </div>
       </div>
       {/* 3D Scene */}
-      
+      <figure
+        className='absolute inset-x-0 -z-50' // -z-50 sets low z-index, so the canvas is behind the UI
+        style={{ width: '100vw', height: '100vh' }} // Stretches the canvas to the viewport
+      >
+        <Canvas
+          camera={{ position: [0, 0, -10], fov: 17.5, near: 1, far: 20 }}
+          dpr={[1, 1.5]} // Cap device pixel ratio for performance
+        >
+          {/* Simplified lighting for better performance */}
+          <ambientLight intensity={1.5} />
+          <Suspense fallback={null}>
+            <Float speed={1.5} rotationIntensity={0.5} floatIntensity={0.5}>
+              <Planet scale={isMobile ? 0.7 : 1} />
+            </Float>
+          </Suspense>
+          <Environment
+            preset='dawn'
+            background={false}
+            resolution={256} // Lower resolution for performance
+          />
+        </Canvas>
+      </figure>
     </section>
   );
 };
